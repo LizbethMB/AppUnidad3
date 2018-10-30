@@ -1,0 +1,37 @@
+<%= form_with(model: detalle_orden, local: true) do |form| %>
+  <% if detalle_orden.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(detalle_orden.errors.count, "error") %> prohibited this detalle_orden from being saved:</h2>
+
+      <ul>
+      <% detalle_orden.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :cantidad %>
+    <%= form.text_area :cantidad %>
+  </div>
+
+  <div class="field">
+    <%= form.label :precioventa %>
+    <%= form.text_area :precioventa %>
+  </div>
+
+  <div class="field">
+    <%= form.label :producto %>
+    <%= form.text_field :producto %>
+  </div>
+
+  <div class="field">
+    <%= form.label :references %>
+    <%= form.text_field :references %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
